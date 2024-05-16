@@ -1,0 +1,407 @@
+***** Zone A *****
+	Zone-wise requirements:
+		Recommendations regarding Identification and authentication control:
+			- Human user identification and authentication
+				Unique identification and authentication
+			- Software process and device identification and authentication
+			- Account management
+			- Identifier management
+			- Authenticator management
+			- Wireless access management
+				Unique identification and authentication
+			- Strength of password-based authentication
+			- Public key infrastructure (PKI) certificates
+			- Strength of public key authentication
+			- Authenticator feedback
+			- Unsuccessful login attempts
+			- System use notification
+			- Access via untrusted networks
+				Explicit access request approval
+
+		Recommendations regarding Use control:
+			- Authorization enforcement
+				Authorization enforcement for all users
+				Permission mapping to roles
+			- Wireless use control
+			- Use control for portable and mobile devices
+			- Mobile code
+			- Session lock
+			- Remote session termination
+			- Auditable events
+			- Audit storage capacity
+			- Response to audit processing failures
+			- Timestamps
+
+		Recommendations regarding System integrity:
+			- Communication integrity
+				Communication authentication
+			- Malicious code protection
+				Malicious code protection on entry and exit points
+				Central management and reporting for malicious code protection
+			- Security functionality verification
+				Automated mechanisms for security functionality verification
+			- Software and information integrity
+				Automated notification about integrity violations
+			- Input validation
+			- Deterministic output
+			- Error handling
+			- Session integrity
+				Invalidation of session IDs after session termination
+				Unique session ID generation
+			- Protection of audit information
+
+		Recommendations regarding Data confidentiality:
+			- Information confidentiality
+			- Use of cryptography
+
+		Recommendations regarding Restricted data flow:
+			- Network segmentation
+			- Zone boundary protection
+			- General purpose person-to-person communication restrictions
+			- Application partitioning
+
+		Recommendations regarding Timely response to events:
+			- Audit log accessibility
+
+		Recommendations regarding Resource availability:
+			- Denial of service protection
+			- Resource management
+			- Control system backup
+			- Control system recovery and reconstitution
+			- Emergency power
+			- Network and security configuration settings
+			- Least functionality
+
+
+	Component-wise requirements:
+
+		** Component appA **
+			Recommendations regarding Identification and authentication control:
+				- Human user identification and authentication
+					Unique identification and authentication
+				- Software process and device identification and authentication
+				- Account management
+				- Identifier management
+				- Authenticator management
+				- Wireless access management
+					Unique identification and authentication
+				- Strength of password-based authentication
+				- Public key infrastructure (PKI) certificates
+				- Strength of public key authentication
+				- Authenticator feedback
+				- Unsuccessful login attempts
+				- System use notification
+				- Access via untrusted networks
+				- Strength of symmetric key-based authentication
+
+			Recommendations regarding Use control:
+				- Authorization enforcement
+					Authorization enforcement for all users
+					Permission mapping to roles
+				- Wireless use control
+				- Mobile code
+					Mobile code integrity check
+				- Session lock
+				- Remote session termination
+				- Auditable events
+				- Audit storage capacity
+				- Response to audit processing failures
+				- Timestamps
+					Time synchronization
+				- Non-repudiation
+				- Use of physical diagnostic and test interfaces
+
+			Recommendations regarding System integrity:
+				- Communication integrity
+					Cryptographic integrity protection
+				- Malicious code protection
+					Report version of code protection
+				- Security functionality verification
+				- Software and information integrity
+					Authenticity of software and information
+					Automated notification about integrity violations
+				- Input validation
+				- Deterministic output
+				- Error handling
+				- Session integrity
+				- Protection of audit information
+				- Support for updates
+					Update authenticity and integrity
+				- Physical tamper resistance and detection
+					Notification of a tempering attempt
+				- Provisioning product supplier roots of trust
+				- Provisioning asset owner roots of trust
+				- Integrity of the boot process
+					Authenticity of the boot process
+
+			Recommendations regarding Data confidentiality:
+				- Information confidentiality
+				- Use of cryptography
+
+			Recommendations regarding Restricted data flow:
+				- Network segmentation
+				- Zone boundary protection
+				- General purpose person-to-person communication restrictions
+
+			Recommendations regarding Timely response to events:
+				- Audit log accessibility
+					Programmatic access to audit logs
+				- Continuous monitoring
+
+			Recommendations regarding Resource availability:
+				- Denial of service protection
+				- Resource management
+				- Control system backup
+				- Control system recovery and reconstitution
+				- Network and security configuration settings
+				- Least functionality
+				- Control system component inventory
+
+***** Zone B *****
+	Zone-wise requirements:
+		Recommendations regarding Identification and authentication control:
+			- Human user identification and authentication
+				Unique identification and authentication
+			- Software process and device identification and authentication
+			- Account management
+			- Identifier management
+			- Authenticator management
+			- Wireless access management
+				Unique identification and authentication
+			- Strength of password-based authentication
+			- Public key infrastructure (PKI) certificates
+			- Strength of public key authentication
+			- Authenticator feedback
+			- Unsuccessful login attempts
+			- System use notification
+			- Access via untrusted networks
+				Explicit access request approval
+
+		Recommendations regarding Use control:
+			- Authorization enforcement
+				Authorization enforcement for all users
+				Permission mapping to roles
+			- Wireless use control
+			- Use control for portable and mobile devices
+			- Mobile code
+			- Session lock
+			- Remote session termination
+			- Auditable events
+			- Audit storage capacity
+			- Response to audit processing failures
+			- Timestamps
+
+		Recommendations regarding System integrity:
+			- Communication integrity
+			- Malicious code protection
+				Malicious code protection on entry and exit points
+			- Security functionality verification
+			- Software and information integrity
+			- Input validation
+			- Deterministic output
+			- Error handling
+			- Session integrity
+			- Protection of audit information
+
+		Recommendations regarding Data confidentiality:
+			- Information confidentiality
+				Protection of confidentiality at rest or in transit via untrusted networks
+			- Information persistence
+			- Use of cryptography
+
+		Recommendations regarding Restricted data flow:
+			- Network segmentation
+				Physical network segmentation
+			- Zone boundary protection
+				Deny by default, allow by exception
+			- General purpose person-to-person communication restrictions
+			- Application partitioning
+
+		Recommendations regarding Timely response to events:
+			- Audit log accessibility
+			- Continuous monitoring
+
+		Recommendations regarding Resource availability:
+			- Denial of service protection
+				Manage communication loads
+			- Resource management
+			- Control system backup
+				Backup verification
+			- Control system recovery and reconstitution
+			- Emergency power
+			- Network and security configuration settings
+			- Least functionality
+			- Control system component inventory
+
+
+	Component-wise requirements:
+
+		** Component appB **
+			Recommendations regarding Identification and authentication control:
+				- Human user identification and authentication
+					Unique identification and authentication
+				- Software process and device identification and authentication
+				- Account management
+				- Identifier management
+				- Authenticator management
+				- Wireless access management
+					Unique identification and authentication
+				- Strength of password-based authentication
+				- Public key infrastructure (PKI) certificates
+				- Strength of public key authentication
+				- Authenticator feedback
+				- Unsuccessful login attempts
+				- System use notification
+				- Access via untrusted networks
+				- Strength of symmetric key-based authentication
+
+			Recommendations regarding Use control:
+				- Authorization enforcement
+					Authorization enforcement for all users
+					Permission mapping to roles
+				- Wireless use control
+				- Mobile code
+					Mobile code integrity check
+				- Session lock
+				- Remote session termination
+				- Auditable events
+				- Audit storage capacity
+				- Response to audit processing failures
+				- Timestamps
+					Time synchronization
+				- Non-repudiation
+				- Use of physical diagnostic and test interfaces
+
+			Recommendations regarding System integrity:
+				- Communication integrity
+					Cryptographic integrity protection
+				- Malicious code protection
+					Report version of code protection
+				- Security functionality verification
+				- Software and information integrity
+					Authenticity of software and information
+				- Input validation
+				- Deterministic output
+				- Error handling
+				- Session integrity
+				- Protection of audit information
+				- Support for updates
+					Update authenticity and integrity
+				- Physical tamper resistance and detection
+				- Provisioning product supplier roots of trust
+				- Provisioning asset owner roots of trust
+				- Integrity of the boot process
+					Authenticity of the boot process
+
+			Recommendations regarding Data confidentiality:
+				- Information confidentiality
+				- Information persistence
+				- Use of cryptography
+
+			Recommendations regarding Restricted data flow:
+				- Network segmentation
+				- Zone boundary protection
+					Deny by default, allow by exception
+				- General purpose person-to-person communication restrictions
+
+			Recommendations regarding Timely response to events:
+				- Audit log accessibility
+					Programmatic access to audit logs
+				- Continuous monitoring
+
+			Recommendations regarding Resource availability:
+				- Denial of service protection
+					Manage communication loads from component
+				- Resource management
+				- Control system backup
+					Backup integrity verification
+				- Control system recovery and reconstitution
+				- Network and security configuration settings
+				- Least functionality
+				- Control system component inventory
+
+
+***** Conduit AToB *****
+	Conduit-wise requirements:
+		Recommendations regarding Identification and authentication control:
+			- Human user identification and authentication
+				Unique identification and authentication
+			- Software process and device identification and authentication
+			- Account management
+			- Identifier management
+			- Authenticator management
+			- Wireless access management
+				Unique identification and authentication
+			- Strength of password-based authentication
+			- Public key infrastructure (PKI) certificates
+			- Strength of public key authentication
+			- Authenticator feedback
+			- Unsuccessful login attempts
+			- System use notification
+			- Access via untrusted networks
+				Explicit access request approval
+
+		Recommendations regarding Use control:
+			- Authorization enforcement
+				Authorization enforcement for all users
+				Permission mapping to roles
+			- Wireless use control
+			- Use control for portable and mobile devices
+			- Mobile code
+			- Session lock
+			- Remote session termination
+			- Auditable events
+			- Audit storage capacity
+			- Response to audit processing failures
+			- Timestamps
+
+		Recommendations regarding System integrity:
+			- Communication integrity
+				Communication authentication
+			- Malicious code protection
+				Malicious code protection on entry and exit points
+				Central management and reporting for malicious code protection
+			- Security functionality verification
+				Automated mechanisms for security functionality verification
+			- Software and information integrity
+				Automated notification about integrity violations
+			- Input validation
+			- Deterministic output
+			- Error handling
+			- Session integrity
+				Invalidation of session IDs after session termination
+				Unique session ID generation
+			- Protection of audit information
+
+		Recommendations regarding Data confidentiality:
+			- Information confidentiality
+				Protection of confidentiality at rest or in transit via untrusted networks
+			- Information persistence
+			- Use of cryptography
+
+		Recommendations regarding Restricted data flow:
+			- Network segmentation
+				Physical network segmentation
+			- Zone boundary protection
+				Deny by default, allow by exception
+			- General purpose person-to-person communication restrictions
+			- Application partitioning
+
+		Recommendations regarding Timely response to events:
+			- Audit log accessibility
+			- Continuous monitoring
+
+		Recommendations regarding Resource availability:
+			- Denial of service protection
+				Manage communication loads
+			- Resource management
+			- Control system backup
+				Backup verification
+			- Control system recovery and reconstitution
+			- Emergency power
+			- Network and security configuration settings
+			- Least functionality
+			- Control system component inventory
+
+
+	Component-wise requirements:

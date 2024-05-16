@@ -1,0 +1,3779 @@
+trusted Zone zone_0{
+	target [SL2,SL1,SL2,SL1,SL1,SL2,SL4];
+	components {
+		(
+			d_0;
+			capability [SL2,SL1,SL2,SL1,SL1,SL2,SL4];
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=0,
+				capacity=2
+			}
+		),
+		(
+			d_1;
+			capability [SL2,SL1,SL2,SL1,SL1,SL2,SL4];
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=1,
+				capacity=2
+			}
+		),
+		(
+			application a_0;
+			executed on d_0;
+			capability [SL4,SL4,SL2,SL1,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_1,
+				a_2,
+				a_3
+			};
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=0,
+				size=1
+			}
+		),
+		(
+			application a_1;
+			executed on d_0;
+			capability [SL4,SL2,SL2,SL3,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=0,
+				size=1
+			}
+		),
+		(
+			application a_2;
+			executed on d_1;
+			capability [SL3,SL2,SL2,SL4,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=1,
+				size=1
+			}
+		),
+		(
+			application a_3;
+			executed on d_1;
+			capability [SL3,SL4,SL4,SL1,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=1,
+				nbDefaultDev=1,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_1{
+	target [SL1,SL2,SL0,SL0,SL4,SL3,SL3];
+	components {
+		(
+			d_2;
+			capability [SL1,SL2,SL0,SL0,SL4,SL3,SL3];
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=2,
+				capacity=2
+			}
+		),
+		(
+			d_3;
+			capability [SL1,SL2,SL0,SL0,SL4,SL3,SL3];
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=3,
+				capacity=2
+			}
+		),
+		(
+			application a_4;
+			executed on d_2;
+			capability [SL4,SL3,SL2,SL2,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_5,
+				a_6,
+				a_7,
+				a_3
+			};
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=2,
+				size=1
+			}
+		),
+		(
+			application a_5;
+			executed on d_2;
+			capability [SL3,SL3,SL0,SL2,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=2,
+				size=1
+			}
+		),
+		(
+			application a_6;
+			executed on d_3;
+			capability [SL3,SL4,SL0,SL2,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=3,
+				size=1
+			}
+		),
+		(
+			application a_7;
+			executed on d_3;
+			capability [SL2,SL3,SL0,SL4,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=3,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_2{
+	target [SL4,SL1,SL2,SL0,SL2,SL3,SL4];
+	components {
+		(
+			d_4;
+			capability [SL4,SL1,SL2,SL0,SL2,SL3,SL4];
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=4,
+				capacity=2
+			}
+		),
+		(
+			d_5;
+			capability [SL4,SL1,SL2,SL0,SL2,SL3,SL4];
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=5,
+				capacity=2
+			}
+		),
+		(
+			application a_8;
+			executed on d_4;
+			capability [SL4,SL1,SL4,SL4,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_9,
+				a_10,
+				a_11,
+				a_2
+			};
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=4,
+				size=1
+			}
+		),
+		(
+			application a_9;
+			executed on d_4;
+			capability [SL4,SL1,SL3,SL1,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=4,
+				size=1
+			}
+		),
+		(
+			application a_10;
+			executed on d_5;
+			capability [SL4,SL1,SL3,SL2,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=5,
+				size=1
+			}
+		),
+		(
+			application a_11;
+			executed on d_5;
+			capability [SL4,SL4,SL4,SL1,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=2,
+				nbDefaultDev=5,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_3{
+	target [SL2,SL0,SL3,SL3,SL0,SL3,SL1];
+	components {
+		(
+			d_6;
+			capability [SL2,SL0,SL3,SL3,SL0,SL3,SL1];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=6,
+				capacity=2
+			}
+		),
+		(
+			d_7;
+			capability [SL2,SL0,SL3,SL3,SL0,SL3,SL1];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=7,
+				capacity=2
+			}
+		),
+		(
+			application a_12;
+			executed on d_6;
+			capability [SL2,SL1,SL4,SL4,SL2,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_13,
+				a_14,
+				a_15,
+				a_5
+			};
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=6,
+				size=1
+			}
+		),
+		(
+			application a_13;
+			executed on d_6;
+			capability [SL4,SL1,SL4,SL3,SL1,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=6,
+				size=1
+			}
+		),
+		(
+			application a_14;
+			executed on d_7;
+			capability [SL3,SL1,SL4,SL3,SL2,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=7,
+				size=1
+			}
+		),
+		(
+			application a_15;
+			executed on d_7;
+			capability [SL3,SL1,SL3,SL3,SL2,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=7,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_4{
+	target [SL2,SL3,SL0,SL3,SL4,SL2,SL3];
+	components {
+		(
+			d_8;
+			capability [SL2,SL3,SL0,SL3,SL4,SL2,SL3];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=8,
+				capacity=2
+			}
+		),
+		(
+			d_9;
+			capability [SL2,SL3,SL0,SL3,SL4,SL2,SL3];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=9,
+				capacity=2
+			}
+		),
+		(
+			application a_16;
+			executed on d_8;
+			capability [SL3,SL4,SL3,SL4,SL4,SL2,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_17,
+				a_18,
+				a_19,
+				a_7
+			};
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=8,
+				size=1
+			}
+		),
+		(
+			application a_17;
+			executed on d_8;
+			capability [SL4,SL4,SL3,SL4,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=8,
+				size=1
+			}
+		),
+		(
+			application a_18;
+			executed on d_9;
+			capability [SL4,SL3,SL3,SL3,SL4,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=9,
+				size=1
+			}
+		),
+		(
+			application a_19;
+			executed on d_9;
+			capability [SL2,SL3,SL2,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=9,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_5{
+	target [SL2,SL0,SL0,SL0,SL1,SL2,SL3];
+	components {
+		(
+			d_10;
+			capability [SL2,SL0,SL0,SL0,SL1,SL2,SL3];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=10,
+				capacity=2
+			}
+		),
+		(
+			d_11;
+			capability [SL2,SL0,SL0,SL0,SL1,SL2,SL3];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=11,
+				capacity=2
+			}
+		),
+		(
+			application a_20;
+			executed on d_10;
+			capability [SL3,SL0,SL2,SL3,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_21,
+				a_22,
+				a_23,
+				a_9
+			};
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=10,
+				size=1
+			}
+		),
+		(
+			application a_21;
+			executed on d_10;
+			capability [SL3,SL1,SL4,SL2,SL2,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=10,
+				size=1
+			}
+		),
+		(
+			application a_22;
+			executed on d_11;
+			capability [SL2,SL0,SL2,SL1,SL2,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=11,
+				size=1
+			}
+		),
+		(
+			application a_23;
+			executed on d_11;
+			capability [SL3,SL3,SL1,SL3,SL1,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=11,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_6{
+	target [SL3,SL4,SL2,SL4,SL1,SL4,SL2];
+	components {
+		(
+			d_12;
+			capability [SL3,SL4,SL2,SL4,SL1,SL4,SL2];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=12,
+				capacity=2
+			}
+		),
+		(
+			d_13;
+			capability [SL3,SL4,SL2,SL4,SL1,SL4,SL2];
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=13,
+				capacity=2
+			}
+		),
+		(
+			application a_24;
+			executed on d_12;
+			capability [SL3,SL4,SL4,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_25,
+				a_26,
+				a_27,
+				a_11
+			};
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=12,
+				size=1
+			}
+		),
+		(
+			application a_25;
+			executed on d_12;
+			capability [SL3,SL4,SL2,SL4,SL3,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=12,
+				size=1
+			}
+		),
+		(
+			application a_26;
+			executed on d_13;
+			capability [SL3,SL4,SL4,SL4,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=13,
+				size=1
+			}
+		),
+		(
+			application a_27;
+			executed on d_13;
+			capability [SL3,SL4,SL4,SL4,SL1,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=3,
+				nbDefaultDev=13,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_7{
+	target [SL1,SL3,SL2,SL3,SL2,SL2,SL2];
+	components {
+		(
+			d_14;
+			capability [SL1,SL3,SL2,SL3,SL2,SL2,SL2];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=14,
+				capacity=2
+			}
+		),
+		(
+			d_15;
+			capability [SL1,SL3,SL2,SL3,SL2,SL2,SL2];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=15,
+				capacity=2
+			}
+		),
+		(
+			application a_28;
+			executed on d_14;
+			capability [SL4,SL3,SL4,SL4,SL3,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_29,
+				a_30,
+				a_31,
+				a_14
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=14,
+				size=1
+			}
+		),
+		(
+			application a_29;
+			executed on d_14;
+			capability [SL3,SL3,SL2,SL3,SL2,SL2,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=14,
+				size=1
+			}
+		),
+		(
+			application a_30;
+			executed on d_15;
+			capability [SL1,SL3,SL4,SL4,SL2,SL2,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=15,
+				size=1
+			}
+		),
+		(
+			application a_31;
+			executed on d_15;
+			capability [SL1,SL3,SL4,SL3,SL4,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=15,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_8{
+	target [SL2,SL1,SL0,SL2,SL4,SL2,SL4];
+	components {
+		(
+			d_16;
+			capability [SL2,SL1,SL0,SL2,SL4,SL2,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=16,
+				capacity=2
+			}
+		),
+		(
+			d_17;
+			capability [SL2,SL1,SL0,SL2,SL4,SL2,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=17,
+				capacity=2
+			}
+		),
+		(
+			application a_32;
+			executed on d_16;
+			capability [SL4,SL1,SL0,SL4,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_33,
+				a_34,
+				a_35,
+				a_15
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=16,
+				size=1
+			}
+		),
+		(
+			application a_33;
+			executed on d_16;
+			capability [SL2,SL1,SL1,SL3,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=16,
+				size=1
+			}
+		),
+		(
+			application a_34;
+			executed on d_17;
+			capability [SL4,SL1,SL4,SL4,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=17,
+				size=1
+			}
+		),
+		(
+			application a_35;
+			executed on d_17;
+			capability [SL4,SL2,SL4,SL3,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=17,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_9{
+	target [SL0,SL2,SL1,SL4,SL1,SL1,SL4];
+	components {
+		(
+			d_18;
+			capability [SL0,SL2,SL1,SL4,SL1,SL1,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=18,
+				capacity=2
+			}
+		),
+		(
+			d_19;
+			capability [SL0,SL2,SL1,SL4,SL1,SL1,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=19,
+				capacity=2
+			}
+		),
+		(
+			application a_36;
+			executed on d_18;
+			capability [SL0,SL3,SL3,SL4,SL4,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_37,
+				a_38,
+				a_39,
+				a_18
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=18,
+				size=1
+			}
+		),
+		(
+			application a_37;
+			executed on d_18;
+			capability [SL2,SL4,SL4,SL4,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=18,
+				size=1
+			}
+		),
+		(
+			application a_38;
+			executed on d_19;
+			capability [SL0,SL3,SL1,SL4,SL4,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=19,
+				size=1
+			}
+		),
+		(
+			application a_39;
+			executed on d_19;
+			capability [SL0,SL4,SL3,SL4,SL2,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=19,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_10{
+	target [SL4,SL1,SL4,SL4,SL3,SL1,SL3];
+	components {
+		(
+			d_20;
+			capability [SL4,SL1,SL4,SL4,SL3,SL1,SL3];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=20,
+				capacity=2
+			}
+		),
+		(
+			d_21;
+			capability [SL4,SL1,SL4,SL4,SL3,SL1,SL3];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=21,
+				capacity=2
+			}
+		),
+		(
+			application a_40;
+			executed on d_20;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_41,
+				a_42,
+				a_43,
+				a_18
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=20,
+				size=1
+			}
+		),
+		(
+			application a_41;
+			executed on d_20;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=20,
+				size=1
+			}
+		),
+		(
+			application a_42;
+			executed on d_21;
+			capability [SL4,SL1,SL4,SL4,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=21,
+				size=1
+			}
+		),
+		(
+			application a_43;
+			executed on d_21;
+			capability [SL4,SL1,SL4,SL4,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=21,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_11{
+	target [SL2,SL0,SL0,SL4,SL1,SL2,SL4];
+	components {
+		(
+			d_22;
+			capability [SL2,SL0,SL0,SL4,SL1,SL2,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=22,
+				capacity=2
+			}
+		),
+		(
+			d_23;
+			capability [SL2,SL0,SL0,SL4,SL1,SL2,SL4];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=23,
+				capacity=2
+			}
+		),
+		(
+			application a_44;
+			executed on d_22;
+			capability [SL2,SL4,SL1,SL4,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_45,
+				a_46,
+				a_47,
+				a_21
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=22,
+				size=1
+			}
+		),
+		(
+			application a_45;
+			executed on d_22;
+			capability [SL4,SL1,SL1,SL4,SL2,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=22,
+				size=1
+			}
+		),
+		(
+			application a_46;
+			executed on d_23;
+			capability [SL2,SL2,SL0,SL4,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=23,
+				size=1
+			}
+		),
+		(
+			application a_47;
+			executed on d_23;
+			capability [SL4,SL3,SL0,SL4,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=23,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_12{
+	target [SL1,SL3,SL0,SL0,SL0,SL4,SL1];
+	components {
+		(
+			d_24;
+			capability [SL1,SL3,SL0,SL0,SL0,SL4,SL1];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=24,
+				capacity=2
+			}
+		),
+		(
+			d_25;
+			capability [SL1,SL3,SL0,SL0,SL0,SL4,SL1];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=25,
+				capacity=2
+			}
+		),
+		(
+			application a_48;
+			executed on d_24;
+			capability [SL1,SL4,SL3,SL2,SL2,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_49,
+				a_50,
+				a_51,
+				a_23
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=24,
+				size=1
+			}
+		),
+		(
+			application a_49;
+			executed on d_24;
+			capability [SL2,SL4,SL1,SL0,SL3,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=24,
+				size=1
+			}
+		),
+		(
+			application a_50;
+			executed on d_25;
+			capability [SL1,SL4,SL0,SL1,SL2,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=25,
+				size=1
+			}
+		),
+		(
+			application a_51;
+			executed on d_25;
+			capability [SL4,SL4,SL4,SL0,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=25,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_13{
+	target [SL4,SL2,SL3,SL4,SL4,SL3,SL1];
+	components {
+		(
+			d_26;
+			capability [SL4,SL2,SL3,SL4,SL4,SL3,SL1];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=26,
+				capacity=2
+			}
+		),
+		(
+			d_27;
+			capability [SL4,SL2,SL3,SL4,SL4,SL3,SL1];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=27,
+				capacity=2
+			}
+		),
+		(
+			application a_52;
+			executed on d_26;
+			capability [SL4,SL3,SL4,SL4,SL4,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_53,
+				a_54,
+				a_55,
+				a_27
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=26,
+				size=1
+			}
+		),
+		(
+			application a_53;
+			executed on d_26;
+			capability [SL4,SL2,SL3,SL4,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=26,
+				size=1
+			}
+		),
+		(
+			application a_54;
+			executed on d_27;
+			capability [SL4,SL4,SL4,SL4,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=27,
+				size=1
+			}
+		),
+		(
+			application a_55;
+			executed on d_27;
+			capability [SL4,SL2,SL4,SL4,SL4,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=27,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_14{
+	target [SL2,SL2,SL3,SL2,SL4,SL0,SL2];
+	components {
+		(
+			d_28;
+			capability [SL2,SL2,SL3,SL2,SL4,SL0,SL2];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=28,
+				capacity=2
+			}
+		),
+		(
+			d_29;
+			capability [SL2,SL2,SL3,SL2,SL4,SL0,SL2];
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=29,
+				capacity=2
+			}
+		),
+		(
+			application a_56;
+			executed on d_28;
+			capability [SL3,SL2,SL4,SL2,SL4,SL2,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_57,
+				a_58,
+				a_59,
+				a_26
+			};
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=28,
+				size=1
+			}
+		),
+		(
+			application a_57;
+			executed on d_28;
+			capability [SL3,SL3,SL4,SL2,SL4,SL1,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=28,
+				size=1
+			}
+		),
+		(
+			application a_58;
+			executed on d_29;
+			capability [SL3,SL3,SL3,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=29,
+				size=1
+			}
+		),
+		(
+			application a_59;
+			executed on d_29;
+			capability [SL4,SL2,SL4,SL4,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=4,
+				nbDefaultDev=29,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_15{
+	target [SL1,SL4,SL4,SL0,SL0,SL2,SL4];
+	components {
+		(
+			d_30;
+			capability [SL1,SL4,SL4,SL0,SL0,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=30,
+				capacity=2
+			}
+		),
+		(
+			d_31;
+			capability [SL1,SL4,SL4,SL0,SL0,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=31,
+				capacity=2
+			}
+		),
+		(
+			application a_60;
+			executed on d_30;
+			capability [SL3,SL4,SL4,SL1,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_61,
+				a_62,
+				a_63,
+				a_31
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=30,
+				size=1
+			}
+		),
+		(
+			application a_61;
+			executed on d_30;
+			capability [SL4,SL4,SL4,SL0,SL2,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=30,
+				size=1
+			}
+		),
+		(
+			application a_62;
+			executed on d_31;
+			capability [SL4,SL4,SL4,SL2,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=31,
+				size=1
+			}
+		),
+		(
+			application a_63;
+			executed on d_31;
+			capability [SL4,SL4,SL4,SL1,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=31,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_16{
+	target [SL1,SL4,SL3,SL0,SL3,SL2,SL4];
+	components {
+		(
+			d_32;
+			capability [SL1,SL4,SL3,SL0,SL3,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=32,
+				capacity=2
+			}
+		),
+		(
+			d_33;
+			capability [SL1,SL4,SL3,SL0,SL3,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=33,
+				capacity=2
+			}
+		),
+		(
+			application a_64;
+			executed on d_32;
+			capability [SL4,SL4,SL3,SL3,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_65,
+				a_66,
+				a_67,
+				a_31
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=32,
+				size=1
+			}
+		),
+		(
+			application a_65;
+			executed on d_32;
+			capability [SL1,SL4,SL4,SL4,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=32,
+				size=1
+			}
+		),
+		(
+			application a_66;
+			executed on d_33;
+			capability [SL2,SL4,SL3,SL1,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=33,
+				size=1
+			}
+		),
+		(
+			application a_67;
+			executed on d_33;
+			capability [SL2,SL4,SL4,SL0,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=33,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_17{
+	target [SL4,SL0,SL2,SL0,SL0,SL3,SL1];
+	components {
+		(
+			d_34;
+			capability [SL4,SL0,SL2,SL0,SL0,SL3,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=34,
+				capacity=2
+			}
+		),
+		(
+			d_35;
+			capability [SL4,SL0,SL2,SL0,SL0,SL3,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=35,
+				capacity=2
+			}
+		),
+		(
+			application a_68;
+			executed on d_34;
+			capability [SL4,SL3,SL4,SL2,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_69,
+				a_70,
+				a_71,
+				a_34
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=34,
+				size=1
+			}
+		),
+		(
+			application a_69;
+			executed on d_34;
+			capability [SL4,SL4,SL2,SL3,SL1,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=34,
+				size=1
+			}
+		),
+		(
+			application a_70;
+			executed on d_35;
+			capability [SL4,SL2,SL2,SL2,SL1,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=35,
+				size=1
+			}
+		),
+		(
+			application a_71;
+			executed on d_35;
+			capability [SL4,SL2,SL3,SL1,SL2,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=35,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_18{
+	target [SL0,SL4,SL4,SL4,SL3,SL1,SL3];
+	components {
+		(
+			d_36;
+			capability [SL0,SL4,SL4,SL4,SL3,SL1,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=36,
+				capacity=2
+			}
+		),
+		(
+			d_37;
+			capability [SL0,SL4,SL4,SL4,SL3,SL1,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=37,
+				capacity=2
+			}
+		),
+		(
+			application a_72;
+			executed on d_36;
+			capability [SL4,SL4,SL4,SL4,SL3,SL2,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_73,
+				a_74,
+				a_75,
+				a_34
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=36,
+				size=1
+			}
+		),
+		(
+			application a_73;
+			executed on d_36;
+			capability [SL3,SL4,SL4,SL4,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=36,
+				size=1
+			}
+		),
+		(
+			application a_74;
+			executed on d_37;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=37,
+				size=1
+			}
+		),
+		(
+			application a_75;
+			executed on d_37;
+			capability [SL0,SL4,SL4,SL4,SL3,SL2,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=37,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_19{
+	target [SL0,SL4,SL1,SL4,SL1,SL3,SL4];
+	components {
+		(
+			d_38;
+			capability [SL0,SL4,SL1,SL4,SL1,SL3,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=38,
+				capacity=2
+			}
+		),
+		(
+			d_39;
+			capability [SL0,SL4,SL1,SL4,SL1,SL3,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=39,
+				capacity=2
+			}
+		),
+		(
+			application a_76;
+			executed on d_38;
+			capability [SL3,SL4,SL2,SL4,SL2,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_77,
+				a_78,
+				a_79,
+				a_38
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=38,
+				size=1
+			}
+		),
+		(
+			application a_77;
+			executed on d_38;
+			capability [SL2,SL4,SL2,SL4,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=38,
+				size=1
+			}
+		),
+		(
+			application a_78;
+			executed on d_39;
+			capability [SL2,SL4,SL2,SL4,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=39,
+				size=1
+			}
+		),
+		(
+			application a_79;
+			executed on d_39;
+			capability [SL2,SL4,SL3,SL4,SL1,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=39,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_20{
+	target [SL1,SL1,SL3,SL2,SL2,SL2,SL0];
+	components {
+		(
+			d_40;
+			capability [SL1,SL1,SL3,SL2,SL2,SL2,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=40,
+				capacity=2
+			}
+		),
+		(
+			d_41;
+			capability [SL1,SL1,SL3,SL2,SL2,SL2,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=41,
+				capacity=2
+			}
+		),
+		(
+			application a_80;
+			executed on d_40;
+			capability [SL1,SL3,SL3,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_81,
+				a_82,
+				a_83,
+				a_37
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=40,
+				size=1
+			}
+		),
+		(
+			application a_81;
+			executed on d_40;
+			capability [SL4,SL4,SL3,SL2,SL2,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=40,
+				size=1
+			}
+		),
+		(
+			application a_82;
+			executed on d_41;
+			capability [SL4,SL3,SL4,SL2,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=41,
+				size=1
+			}
+		),
+		(
+			application a_83;
+			executed on d_41;
+			capability [SL3,SL1,SL3,SL3,SL3,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=41,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_21{
+	target [SL1,SL0,SL1,SL2,SL1,SL2,SL4];
+	components {
+		(
+			d_42;
+			capability [SL1,SL0,SL1,SL2,SL1,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=42,
+				capacity=2
+			}
+		),
+		(
+			d_43;
+			capability [SL1,SL0,SL1,SL2,SL1,SL2,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=43,
+				capacity=2
+			}
+		),
+		(
+			application a_84;
+			executed on d_42;
+			capability [SL3,SL4,SL1,SL4,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_85,
+				a_86,
+				a_87,
+				a_42
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=42,
+				size=1
+			}
+		),
+		(
+			application a_85;
+			executed on d_42;
+			capability [SL3,SL0,SL2,SL3,SL1,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=42,
+				size=1
+			}
+		),
+		(
+			application a_86;
+			executed on d_43;
+			capability [SL3,SL2,SL4,SL3,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=43,
+				size=1
+			}
+		),
+		(
+			application a_87;
+			executed on d_43;
+			capability [SL1,SL1,SL1,SL3,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=43,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_22{
+	target [SL2,SL2,SL0,SL1,SL1,SL2,SL1];
+	components {
+		(
+			d_44;
+			capability [SL2,SL2,SL0,SL1,SL1,SL2,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=44,
+				capacity=2
+			}
+		),
+		(
+			d_45;
+			capability [SL2,SL2,SL0,SL1,SL1,SL2,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=45,
+				capacity=2
+			}
+		),
+		(
+			application a_88;
+			executed on d_44;
+			capability [SL2,SL4,SL3,SL3,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_89,
+				a_90,
+				a_91,
+				a_42
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=44,
+				size=1
+			}
+		),
+		(
+			application a_89;
+			executed on d_44;
+			capability [SL4,SL4,SL3,SL4,SL4,SL2,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=44,
+				size=1
+			}
+		),
+		(
+			application a_90;
+			executed on d_45;
+			capability [SL4,SL3,SL4,SL4,SL2,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=45,
+				size=1
+			}
+		),
+		(
+			application a_91;
+			executed on d_45;
+			capability [SL2,SL3,SL2,SL3,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=45,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_23{
+	target [SL4,SL3,SL3,SL2,SL4,SL0,SL3];
+	components {
+		(
+			d_46;
+			capability [SL4,SL3,SL3,SL2,SL4,SL0,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=46,
+				capacity=2
+			}
+		),
+		(
+			d_47;
+			capability [SL4,SL3,SL3,SL2,SL4,SL0,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=47,
+				capacity=2
+			}
+		),
+		(
+			application a_92;
+			executed on d_46;
+			capability [SL4,SL4,SL4,SL4,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_93,
+				a_94,
+				a_95,
+				a_47
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=46,
+				size=1
+			}
+		),
+		(
+			application a_93;
+			executed on d_46;
+			capability [SL4,SL3,SL4,SL2,SL4,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=46,
+				size=1
+			}
+		),
+		(
+			application a_94;
+			executed on d_47;
+			capability [SL4,SL4,SL4,SL2,SL4,SL0,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=47,
+				size=1
+			}
+		),
+		(
+			application a_95;
+			executed on d_47;
+			capability [SL4,SL3,SL3,SL3,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=47,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_24{
+	target [SL3,SL2,SL3,SL0,SL3,SL3,SL1];
+	components {
+		(
+			d_48;
+			capability [SL3,SL2,SL3,SL0,SL3,SL3,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=48,
+				capacity=2
+			}
+		),
+		(
+			d_49;
+			capability [SL3,SL2,SL3,SL0,SL3,SL3,SL1];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=49,
+				capacity=2
+			}
+		),
+		(
+			application a_96;
+			executed on d_48;
+			capability [SL4,SL2,SL4,SL3,SL4,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_97,
+				a_98,
+				a_99,
+				a_47
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=48,
+				size=1
+			}
+		),
+		(
+			application a_97;
+			executed on d_48;
+			capability [SL4,SL2,SL4,SL2,SL4,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=48,
+				size=1
+			}
+		),
+		(
+			application a_98;
+			executed on d_49;
+			capability [SL4,SL4,SL3,SL2,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=49,
+				size=1
+			}
+		),
+		(
+			application a_99;
+			executed on d_49;
+			capability [SL3,SL4,SL4,SL0,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=49,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_25{
+	target [SL0,SL3,SL2,SL2,SL0,SL0,SL3];
+	components {
+		(
+			d_50;
+			capability [SL0,SL3,SL2,SL2,SL0,SL0,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=50,
+				capacity=2
+			}
+		),
+		(
+			d_51;
+			capability [SL0,SL3,SL2,SL2,SL0,SL0,SL3];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=51,
+				capacity=2
+			}
+		),
+		(
+			application a_100;
+			executed on d_50;
+			capability [SL1,SL4,SL2,SL3,SL2,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_101,
+				a_102,
+				a_103,
+				a_50
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=50,
+				size=1
+			}
+		),
+		(
+			application a_101;
+			executed on d_50;
+			capability [SL1,SL4,SL2,SL3,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=50,
+				size=1
+			}
+		),
+		(
+			application a_102;
+			executed on d_51;
+			capability [SL0,SL3,SL2,SL3,SL1,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=51,
+				size=1
+			}
+		),
+		(
+			application a_103;
+			executed on d_51;
+			capability [SL3,SL4,SL3,SL2,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=51,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_26{
+	target [SL4,SL0,SL0,SL1,SL4,SL4,SL0];
+	components {
+		(
+			d_52;
+			capability [SL4,SL0,SL0,SL1,SL4,SL4,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=52,
+				capacity=2
+			}
+		),
+		(
+			d_53;
+			capability [SL4,SL0,SL0,SL1,SL4,SL4,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=53,
+				capacity=2
+			}
+		),
+		(
+			application a_104;
+			executed on d_52;
+			capability [SL4,SL1,SL3,SL1,SL4,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_105,
+				a_106,
+				a_107,
+				a_49
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=52,
+				size=1
+			}
+		),
+		(
+			application a_105;
+			executed on d_52;
+			capability [SL4,SL1,SL2,SL3,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=52,
+				size=1
+			}
+		),
+		(
+			application a_106;
+			executed on d_53;
+			capability [SL4,SL1,SL4,SL4,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=53,
+				size=1
+			}
+		),
+		(
+			application a_107;
+			executed on d_53;
+			capability [SL4,SL0,SL4,SL3,SL4,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=53,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_27{
+	target [SL0,SL1,SL4,SL2,SL4,SL4,SL2];
+	components {
+		(
+			d_54;
+			capability [SL0,SL1,SL4,SL2,SL4,SL4,SL2];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=54,
+				capacity=2
+			}
+		),
+		(
+			d_55;
+			capability [SL0,SL1,SL4,SL2,SL4,SL4,SL2];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=55,
+				capacity=2
+			}
+		),
+		(
+			application a_108;
+			executed on d_54;
+			capability [SL4,SL1,SL4,SL3,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_109,
+				a_110,
+				a_111,
+				a_53
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=54,
+				size=1
+			}
+		),
+		(
+			application a_109;
+			executed on d_54;
+			capability [SL0,SL1,SL4,SL3,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=54,
+				size=1
+			}
+		),
+		(
+			application a_110;
+			executed on d_55;
+			capability [SL0,SL2,SL4,SL2,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=55,
+				size=1
+			}
+		),
+		(
+			application a_111;
+			executed on d_55;
+			capability [SL0,SL3,SL4,SL4,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=55,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_28{
+	target [SL1,SL4,SL4,SL1,SL4,SL1,SL4];
+	components {
+		(
+			d_56;
+			capability [SL1,SL4,SL4,SL1,SL4,SL1,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=56,
+				capacity=2
+			}
+		),
+		(
+			d_57;
+			capability [SL1,SL4,SL4,SL1,SL4,SL1,SL4];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=57,
+				capacity=2
+			}
+		),
+		(
+			application a_112;
+			executed on d_56;
+			capability [SL3,SL4,SL4,SL1,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_113,
+				a_114,
+				a_115,
+				a_55
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=56,
+				size=1
+			}
+		),
+		(
+			application a_113;
+			executed on d_56;
+			capability [SL3,SL4,SL4,SL1,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=56,
+				size=1
+			}
+		),
+		(
+			application a_114;
+			executed on d_57;
+			capability [SL1,SL4,SL4,SL2,SL4,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=57,
+				size=1
+			}
+		),
+		(
+			application a_115;
+			executed on d_57;
+			capability [SL1,SL4,SL4,SL2,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=57,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_29{
+	target [SL4,SL2,SL1,SL1,SL2,SL4,SL0];
+	components {
+		(
+			d_58;
+			capability [SL4,SL2,SL1,SL1,SL2,SL4,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=58,
+				capacity=2
+			}
+		),
+		(
+			d_59;
+			capability [SL4,SL2,SL1,SL1,SL2,SL4,SL0];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=59,
+				capacity=2
+			}
+		),
+		(
+			application a_116;
+			executed on d_58;
+			capability [SL4,SL2,SL1,SL2,SL2,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_117,
+				a_118,
+				a_119,
+				a_58
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=58,
+				size=1
+			}
+		),
+		(
+			application a_117;
+			executed on d_58;
+			capability [SL4,SL2,SL3,SL2,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=58,
+				size=1
+			}
+		),
+		(
+			application a_118;
+			executed on d_59;
+			capability [SL4,SL3,SL4,SL2,SL4,SL4,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=59,
+				size=1
+			}
+		),
+		(
+			application a_119;
+			executed on d_59;
+			capability [SL4,SL4,SL2,SL3,SL3,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=59,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_30{
+	target [SL0,SL2,SL4,SL2,SL4,SL1,SL2];
+	components {
+		(
+			d_60;
+			capability [SL0,SL2,SL4,SL2,SL4,SL1,SL2];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=60,
+				capacity=2
+			}
+		),
+		(
+			d_61;
+			capability [SL0,SL2,SL4,SL2,SL4,SL1,SL2];
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=61,
+				capacity=2
+			}
+		),
+		(
+			application a_120;
+			executed on d_60;
+			capability [SL0,SL4,SL4,SL3,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_121,
+				a_122,
+				a_123,
+				a_58
+			};
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=60,
+				size=1
+			}
+		),
+		(
+			application a_121;
+			executed on d_60;
+			capability [SL3,SL3,SL4,SL2,SL4,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=60,
+				size=1
+			}
+		),
+		(
+			application a_122;
+			executed on d_61;
+			capability [SL2,SL3,SL4,SL2,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=61,
+				size=1
+			}
+		),
+		(
+			application a_123;
+			executed on d_61;
+			capability [SL1,SL4,SL4,SL3,SL4,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=5,
+				nbDefaultDev=61,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_31{
+	target [SL1,SL0,SL4,SL3,SL1,SL0,SL3];
+	components {
+		(
+			d_62;
+			capability [SL1,SL0,SL4,SL3,SL1,SL0,SL3];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=62,
+				capacity=2
+			}
+		),
+		(
+			d_63;
+			capability [SL1,SL0,SL4,SL3,SL1,SL0,SL3];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=63,
+				capacity=2
+			}
+		),
+		(
+			application a_124;
+			executed on d_62;
+			capability [SL4,SL3,SL4,SL4,SL3,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_125,
+				a_126,
+				a_127,
+				a_61
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=62,
+				size=1
+			}
+		),
+		(
+			application a_125;
+			executed on d_62;
+			capability [SL1,SL4,SL4,SL3,SL1,SL0,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=62,
+				size=1
+			}
+		),
+		(
+			application a_126;
+			executed on d_63;
+			capability [SL2,SL2,SL4,SL3,SL2,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=63,
+				size=1
+			}
+		),
+		(
+			application a_127;
+			executed on d_63;
+			capability [SL3,SL0,SL4,SL4,SL3,SL1,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=63,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_32{
+	target [SL3,SL3,SL2,SL4,SL2,SL0,SL0];
+	components {
+		(
+			d_64;
+			capability [SL3,SL3,SL2,SL4,SL2,SL0,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=64,
+				capacity=2
+			}
+		),
+		(
+			d_65;
+			capability [SL3,SL3,SL2,SL4,SL2,SL0,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=65,
+				capacity=2
+			}
+		),
+		(
+			application a_128;
+			executed on d_64;
+			capability [SL3,SL3,SL4,SL4,SL2,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_129,
+				a_130,
+				a_131,
+				a_63
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=64,
+				size=1
+			}
+		),
+		(
+			application a_129;
+			executed on d_64;
+			capability [SL4,SL3,SL4,SL4,SL2,SL3,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=64,
+				size=1
+			}
+		),
+		(
+			application a_130;
+			executed on d_65;
+			capability [SL4,SL3,SL4,SL4,SL2,SL1,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=65,
+				size=1
+			}
+		),
+		(
+			application a_131;
+			executed on d_65;
+			capability [SL4,SL3,SL3,SL4,SL4,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=65,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_33{
+	target [SL1,SL3,SL2,SL3,SL1,SL4,SL4];
+	components {
+		(
+			d_66;
+			capability [SL1,SL3,SL2,SL3,SL1,SL4,SL4];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=66,
+				capacity=2
+			}
+		),
+		(
+			d_67;
+			capability [SL1,SL3,SL2,SL3,SL1,SL4,SL4];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=67,
+				capacity=2
+			}
+		),
+		(
+			application a_132;
+			executed on d_66;
+			capability [SL1,SL3,SL4,SL4,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_133,
+				a_134,
+				a_135,
+				a_65
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=66,
+				size=1
+			}
+		),
+		(
+			application a_133;
+			executed on d_66;
+			capability [SL3,SL3,SL4,SL3,SL1,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=66,
+				size=1
+			}
+		),
+		(
+			application a_134;
+			executed on d_67;
+			capability [SL2,SL4,SL2,SL3,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=67,
+				size=1
+			}
+		),
+		(
+			application a_135;
+			executed on d_67;
+			capability [SL1,SL3,SL2,SL3,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=67,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_34{
+	target [SL0,SL2,SL0,SL1,SL4,SL0,SL0];
+	components {
+		(
+			d_68;
+			capability [SL0,SL2,SL0,SL1,SL4,SL0,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=68,
+				capacity=2
+			}
+		),
+		(
+			d_69;
+			capability [SL0,SL2,SL0,SL1,SL4,SL0,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=69,
+				capacity=2
+			}
+		),
+		(
+			application a_136;
+			executed on d_68;
+			capability [SL1,SL3,SL1,SL3,SL4,SL2,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			communicates with {
+				a_137,
+				a_138,
+				a_139,
+				a_65
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=68,
+				size=1
+			}
+		),
+		(
+			application a_137;
+			executed on d_68;
+			capability [SL3,SL3,SL0,SL3,SL4,SL0,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=68,
+				size=1
+			}
+		),
+		(
+			application a_138;
+			executed on d_69;
+			capability [SL0,SL3,SL2,SL2,SL4,SL2,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=69,
+				size=1
+			}
+		),
+		(
+			application a_139;
+			executed on d_69;
+			capability [SL3,SL3,SL4,SL3,SL4,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=69,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_35{
+	target [SL1,SL0,SL0,SL2,SL1,SL3,SL1];
+	components {
+		(
+			d_70;
+			capability [SL1,SL0,SL0,SL2,SL1,SL3,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=70,
+				capacity=2
+			}
+		),
+		(
+			d_71;
+			capability [SL1,SL0,SL0,SL2,SL1,SL3,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=71,
+				capacity=2
+			}
+		),
+		(
+			application a_140;
+			executed on d_70;
+			capability [SL2,SL0,SL3,SL4,SL4,SL3,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_141,
+				a_142,
+				a_143,
+				a_69
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=70,
+				size=1
+			}
+		),
+		(
+			application a_141;
+			executed on d_70;
+			capability [SL4,SL3,SL0,SL4,SL3,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=70,
+				size=1
+			}
+		),
+		(
+			application a_142;
+			executed on d_71;
+			capability [SL3,SL3,SL3,SL4,SL4,SL3,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=71,
+				size=1
+			}
+		),
+		(
+			application a_143;
+			executed on d_71;
+			capability [SL2,SL1,SL3,SL4,SL3,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=71,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_36{
+	target [SL1,SL3,SL0,SL2,SL0,SL4,SL0];
+	components {
+		(
+			d_72;
+			capability [SL1,SL3,SL0,SL2,SL0,SL4,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=72,
+				capacity=2
+			}
+		),
+		(
+			d_73;
+			capability [SL1,SL3,SL0,SL2,SL0,SL4,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=73,
+				capacity=2
+			}
+		),
+		(
+			application a_144;
+			executed on d_72;
+			capability [SL4,SL4,SL4,SL3,SL4,SL4,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			communicates with {
+				a_145,
+				a_146,
+				a_147,
+				a_70
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=72,
+				size=1
+			}
+		),
+		(
+			application a_145;
+			executed on d_72;
+			capability [SL3,SL3,SL4,SL2,SL4,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=72,
+				size=1
+			}
+		),
+		(
+			application a_146;
+			executed on d_73;
+			capability [SL4,SL4,SL2,SL3,SL2,SL4,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=73,
+				size=1
+			}
+		),
+		(
+			application a_147;
+			executed on d_73;
+			capability [SL3,SL4,SL3,SL2,SL1,SL4,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=73,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_37{
+	target [SL2,SL0,SL2,SL0,SL0,SL3,SL2];
+	components {
+		(
+			d_74;
+			capability [SL2,SL0,SL2,SL0,SL0,SL3,SL2];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=74,
+				capacity=2
+			}
+		),
+		(
+			d_75;
+			capability [SL2,SL0,SL2,SL0,SL0,SL3,SL2];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=75,
+				capacity=2
+			}
+		),
+		(
+			application a_148;
+			executed on d_74;
+			capability [SL2,SL0,SL2,SL1,SL4,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_149,
+				a_150,
+				a_151,
+				a_74
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=74,
+				size=1
+			}
+		),
+		(
+			application a_149;
+			executed on d_74;
+			capability [SL2,SL3,SL2,SL0,SL0,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=74,
+				size=1
+			}
+		),
+		(
+			application a_150;
+			executed on d_75;
+			capability [SL2,SL0,SL3,SL2,SL2,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=75,
+				size=1
+			}
+		),
+		(
+			application a_151;
+			executed on d_75;
+			capability [SL4,SL2,SL4,SL1,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=75,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_38{
+	target [SL4,SL4,SL3,SL3,SL3,SL3,SL1];
+	components {
+		(
+			d_76;
+			capability [SL4,SL4,SL3,SL3,SL3,SL3,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=76,
+				capacity=2
+			}
+		),
+		(
+			d_77;
+			capability [SL4,SL4,SL3,SL3,SL3,SL3,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=77,
+				capacity=2
+			}
+		),
+		(
+			application a_152;
+			executed on d_76;
+			capability [SL4,SL4,SL3,SL4,SL3,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_153,
+				a_154,
+				a_155,
+				a_73
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=76,
+				size=1
+			}
+		),
+		(
+			application a_153;
+			executed on d_76;
+			capability [SL4,SL4,SL4,SL4,SL3,SL4,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=76,
+				size=1
+			}
+		),
+		(
+			application a_154;
+			executed on d_77;
+			capability [SL4,SL4,SL4,SL4,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=77,
+				size=1
+			}
+		),
+		(
+			application a_155;
+			executed on d_77;
+			capability [SL4,SL4,SL3,SL4,SL3,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=77,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_39{
+	target [SL0,SL3,SL1,SL2,SL2,SL1,SL1];
+	components {
+		(
+			d_78;
+			capability [SL0,SL3,SL1,SL2,SL2,SL1,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=78,
+				capacity=2
+			}
+		),
+		(
+			d_79;
+			capability [SL0,SL3,SL1,SL2,SL2,SL1,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=79,
+				capacity=2
+			}
+		),
+		(
+			application a_156;
+			executed on d_78;
+			capability [SL4,SL3,SL4,SL3,SL4,SL4,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			communicates with {
+				a_157,
+				a_158,
+				a_159,
+				a_78
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=78,
+				size=1
+			}
+		),
+		(
+			application a_157;
+			executed on d_78;
+			capability [SL0,SL4,SL2,SL2,SL2,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=78,
+				size=1
+			}
+		),
+		(
+			application a_158;
+			executed on d_79;
+			capability [SL4,SL4,SL3,SL4,SL3,SL1,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=79,
+				size=1
+			}
+		),
+		(
+			application a_159;
+			executed on d_79;
+			capability [SL4,SL4,SL1,SL4,SL2,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=79,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_40{
+	target [SL3,SL3,SL0,SL3,SL2,SL3,SL0];
+	components {
+		(
+			d_80;
+			capability [SL3,SL3,SL0,SL3,SL2,SL3,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=80,
+				capacity=2
+			}
+		),
+		(
+			d_81;
+			capability [SL3,SL3,SL0,SL3,SL2,SL3,SL0];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=81,
+				capacity=2
+			}
+		),
+		(
+			application a_160;
+			executed on d_80;
+			capability [SL4,SL4,SL0,SL3,SL3,SL3,SL0];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_161,
+				a_162,
+				a_163,
+				a_79
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=80,
+				size=1
+			}
+		),
+		(
+			application a_161;
+			executed on d_80;
+			capability [SL3,SL3,SL1,SL3,SL2,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=80,
+				size=1
+			}
+		),
+		(
+			application a_162;
+			executed on d_81;
+			capability [SL3,SL3,SL4,SL3,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=81,
+				size=1
+			}
+		),
+		(
+			application a_163;
+			executed on d_81;
+			capability [SL3,SL3,SL1,SL4,SL2,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=81,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_41{
+	target [SL1,SL1,SL0,SL3,SL2,SL0,SL1];
+	components {
+		(
+			d_82;
+			capability [SL1,SL1,SL0,SL3,SL2,SL0,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=82,
+				capacity=2
+			}
+		),
+		(
+			d_83;
+			capability [SL1,SL1,SL0,SL3,SL2,SL0,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=83,
+				capacity=2
+			}
+		),
+		(
+			application a_164;
+			executed on d_82;
+			capability [SL2,SL4,SL3,SL3,SL4,SL0,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_165,
+				a_166,
+				a_167,
+				a_82
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=82,
+				size=1
+			}
+		),
+		(
+			application a_165;
+			executed on d_82;
+			capability [SL3,SL1,SL3,SL3,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=82,
+				size=1
+			}
+		),
+		(
+			application a_166;
+			executed on d_83;
+			capability [SL4,SL1,SL4,SL4,SL3,SL3,SL3];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=83,
+				size=1
+			}
+		),
+		(
+			application a_167;
+			executed on d_83;
+			capability [SL4,SL3,SL3,SL4,SL2,SL1,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=83,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_42{
+	target [SL2,SL0,SL1,SL4,SL1,SL0,SL1];
+	components {
+		(
+			d_84;
+			capability [SL2,SL0,SL1,SL4,SL1,SL0,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=84,
+				capacity=2
+			}
+		),
+		(
+			d_85;
+			capability [SL2,SL0,SL1,SL4,SL1,SL0,SL1];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=85,
+				capacity=2
+			}
+		),
+		(
+			application a_168;
+			executed on d_84;
+			capability [SL2,SL0,SL3,SL4,SL3,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			communicates with {
+				a_169,
+				a_170,
+				a_171,
+				a_82
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=84,
+				size=1
+			}
+		),
+		(
+			application a_169;
+			executed on d_84;
+			capability [SL2,SL2,SL3,SL4,SL3,SL0,SL1];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=84,
+				size=1
+			}
+		),
+		(
+			application a_170;
+			executed on d_85;
+			capability [SL4,SL2,SL3,SL4,SL4,SL4,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 3 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 2 else 1))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=85,
+				size=1
+			}
+		),
+		(
+			application a_171;
+			executed on d_85;
+			capability [SL3,SL1,SL4,SL4,SL4,SL2,SL2];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=85,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Zone zone_43{
+	target [SL0,SL2,SL1,SL2,SL1,SL1,SL4];
+	components {
+		(
+			d_86;
+			capability [SL0,SL2,SL1,SL2,SL1,SL1,SL4];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=86,
+				capacity=2
+			}
+		),
+		(
+			d_87;
+			capability [SL0,SL2,SL1,SL2,SL1,SL1,SL4];
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=87,
+				capacity=2
+			}
+		),
+		(
+			application a_172;
+			executed on d_86;
+			capability [SL3,SL2,SL1,SL2,SL1,SL1,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 15 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 10 else 5))
+			);
+			communicates with {
+				a_173,
+				a_174,
+				a_175,
+				a_87
+			};
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=86,
+				size=1
+			}
+		),
+		(
+			application a_173;
+			executed on d_86;
+			capability [SL2,SL2,SL1,SL4,SL4,SL2,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 12 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 8 else 4))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=86,
+				size=1
+			}
+		),
+		(
+			application a_174;
+			executed on d_87;
+			capability [SL3,SL2,SL3,SL2,SL1,SL3,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 6 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 4 else 2))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=87,
+				size=1
+			}
+		),
+		(
+			application a_175;
+			executed on d_87;
+			capability [SL1,SL3,SL1,SL3,SL3,SL4,SL4];
+			scoreCalc (
+				( if (cmp ref "nbDefaultDev" = self "nbDefaultDev") then 9 else (if (cmp ref "defaultLayer" = self "defaultLayer") then 6 else 3))
+			);
+			properties{
+				defaultLayer=6,
+				nbDefaultDev=87,
+				size=1
+			}
+		)
+	}
+}
+
+trusted Conduit zone_0Tozone_1{
+	connects (zone_0,zone_1);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_0Tozone_2{
+	connects (zone_0,zone_2);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_1Tozone_3{
+	connects (zone_1,zone_3);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_1Tozone_4{
+	connects (zone_1,zone_4);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_3Tozone_7{
+	connects (zone_3,zone_7);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_3Tozone_8{
+	connects (zone_3,zone_8);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_7Tozone_15{
+	connects (zone_7,zone_15);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_7Tozone_16{
+	connects (zone_7,zone_16);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_15Tozone_31{
+	connects (zone_15,zone_31);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_15Tozone_32{
+	connects (zone_15,zone_32);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_16Tozone_33{
+	connects (zone_16,zone_33);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_16Tozone_34{
+	connects (zone_16,zone_34);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_8Tozone_17{
+	connects (zone_8,zone_17);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_8Tozone_18{
+	connects (zone_8,zone_18);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_17Tozone_35{
+	connects (zone_17,zone_35);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_17Tozone_36{
+	connects (zone_17,zone_36);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_18Tozone_37{
+	connects (zone_18,zone_37);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_18Tozone_38{
+	connects (zone_18,zone_38);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_4Tozone_9{
+	connects (zone_4,zone_9);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_4Tozone_10{
+	connects (zone_4,zone_10);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_9Tozone_19{
+	connects (zone_9,zone_19);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_9Tozone_20{
+	connects (zone_9,zone_20);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_19Tozone_39{
+	connects (zone_19,zone_39);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_19Tozone_40{
+	connects (zone_19,zone_40);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_20Tozone_41{
+	connects (zone_20,zone_41);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_20Tozone_42{
+	connects (zone_20,zone_42);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_10Tozone_21{
+	connects (zone_10,zone_21);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_10Tozone_22{
+	connects (zone_10,zone_22);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_21Tozone_43{
+	connects (zone_21,zone_43);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_2Tozone_5{
+	connects (zone_2,zone_5);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_2Tozone_6{
+	connects (zone_2,zone_6);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_5Tozone_11{
+	connects (zone_5,zone_11);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_5Tozone_12{
+	connects (zone_5,zone_12);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_11Tozone_23{
+	connects (zone_11,zone_23);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_11Tozone_24{
+	connects (zone_11,zone_24);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_12Tozone_25{
+	connects (zone_12,zone_25);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_12Tozone_26{
+	connects (zone_12,zone_26);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_6Tozone_13{
+	connects (zone_6,zone_13);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_6Tozone_14{
+	connects (zone_6,zone_14);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_13Tozone_27{
+	connects (zone_13,zone_27);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_13Tozone_28{
+	connects (zone_13,zone_28);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_14Tozone_29{
+	connects (zone_14,zone_29);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}
+trusted Conduit zone_14Tozone_30{
+	connects (zone_14,zone_30);
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4]
+}

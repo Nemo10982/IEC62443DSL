@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.iec62443.baseModel.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.iec62443.baseModel.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.iec62443.baseModel.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.xtext.iec62443.baseModel,
+ org.xtext.iec62443.baseModel.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.xtext.iec62443.baseModel.ui.contentassist,
+ org.xtext.iec62443.baseModel.ui.internal,
+ org.xtext.iec62443.baseModel.ui.quickfix
+Bundle-Activator: org.xtext.iec62443.baseModel.ui.internal.BaseModelActivator

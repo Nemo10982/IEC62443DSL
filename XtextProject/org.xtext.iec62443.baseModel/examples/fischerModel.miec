@@ -1,0 +1,204 @@
+// A mpo
+// B hbw
+// C gripper
+// D sorter
+
+trusted Zone A {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isA = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			RTUA;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP" 
+			}
+		),
+		
+		(
+			application MPOProgram;
+			executed on PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]; 
+			scoreCalc (
+				(if (cmp ref "isA" = true) then 10 else 2)
+			);
+			constraints{ 
+				optional needs isA,
+				model="m241",
+				canExecute=true
+			};  
+			communicates with {
+				RTUA, 
+				GripperProgram  
+			};
+			properties{
+				size = 50,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+trusted Zone B {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCB1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isB = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			RTUB;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP"
+			}
+		),
+		
+		(
+			application HBWProgram;
+			executed on PLCB1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			scoreCalc (
+				(if (cmp ref "isB" = true) then 10 else 2)
+			);
+			constraints{
+				optional needs isB,
+				model="m241",
+				canExecute=true
+			}; 
+			communicates with {
+				RTUB,
+				GripperProgram
+			};
+			properties{
+				size = 33,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+
+trusted Zone C {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCC1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isC = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			RTUC;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP"
+			}
+		),
+		
+		(
+			application GripperProgram;
+			executed on PLCC1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			scoreCalc (
+				(if (cmp ref "isC" = true) then 10 else 2)
+			);
+			constraints{
+				optional needs isC,
+				model="m241",
+				canExecute=true
+			}; 
+			communicates with {
+				RTUC
+			};
+			properties{
+				size = 50,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+
+trusted Zone D {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCD1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isD = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			application SorterProgram;
+			executed on PLCD1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			scoreCalc (
+				(if (cmp ref "isD" = true) then 10 else 2)
+			);
+			constraints{
+				optional needs isD,
+				model="m241",
+				canExecute=true
+			};
+			properties{
+				size = 50,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+} 
+
+
+trusted Conduit AtoC {
+	connects (A,C);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1]
+}
+
+trusted Conduit AtoD {
+	connects (A,D);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1]
+} 
+
+trusted Conduit BtoC {
+	connects (B,C);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1]
+}
+
+trusted Conduit CtoD {
+	connects (C,D);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1]
+}
+
+

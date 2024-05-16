@@ -1,0 +1,64 @@
+Zone testZone{
+	target [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+	components {
+		( 
+			device d0;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				capacity = 10
+			}
+		),
+		
+		( 
+			device d1;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				capacity = 10
+			}
+		),
+		
+		( 
+			device d2;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				capacity = 20
+			}
+		)
+		
+		,
+		
+		( 
+			application a0;
+			executed on d0;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				size = 10,
+				score = 1
+			}
+		)
+		
+		,
+		
+		( 
+			application a1;
+			executed on d1;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				size = 10,
+				score = 1
+			}
+		)
+		
+		,
+		
+		( 
+			application a2;
+			executed on d2;
+			capability [SL4,SL4,SL4,SL4,SL4,SL4,SL4];
+			properties {
+				size = 10,
+				score = 1
+			}
+		)
+	}
+}

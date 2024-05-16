@@ -1,0 +1,228 @@
+
+
+trusted physical Zone Enterprise     {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(laptop_computer ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(workstation ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(mainFrame ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(server1 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(server2 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+} 
+
+
+physical Conduit EnterpriseConduit{
+	connects (Enterprise, PlantA, PlantB, PlantC);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    channels { 
+    	(E_C1 ; connects {
+    		laptop_computer,
+    		workstation,
+    		mainFrame,
+    		server1,
+    		server2,
+    		router_A,
+    		router_B,
+    		router_C
+    	})
+    } 
+}
+
+physical Zone PlantA {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(laptop_computer_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(workstation_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(router_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(file_print_server_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+physical Conduit PlantAConduit{
+	connects (PlantA);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components{
+	  	(firewall_A ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PA_C1 ; connects {
+    		data_server_A,
+    		app_server_A, 
+    		file_print_server_A,
+    		workstation_A,
+    		laptop_computer_A,
+    		router_A,
+    		firewall_A
+    	})
+    }
+}
+
+physical Zone PlantAControl {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(system controller_A_C_1 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system controller_A_C_2 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system supervision_A_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(maintenance_server_A_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_A_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_A_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+
+physical Conduit PlantAControlConduit{
+	connects (PlantA, PlantAControl, PlantAConduit);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(firewall_A_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PAC_C1 ; connects {
+    		firewall_A,
+    		firewall_A_C,
+    		controller_A_C_1,
+    		controller_A_C_2,
+    		supervision_A_C,
+    		maintenance_server_A_C, 
+    		app_server_A_C,
+    		data_server_A_C
+    		
+    	})
+    }
+}
+
+
+physical Zone PlantB {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(laptop_computer_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(workstation_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(router_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(file_print_server_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+physical Conduit PlantBConduit{
+	connects (PlantB);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components{
+	  	(firewall_B ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PB_C1 ; connects {
+    		data_server_B,
+    		app_server_B,
+    		file_print_server_B,
+    		workstation_B,
+    		laptop_computer_B,
+    		router_B,
+    		firewall_B
+    	})
+    }
+}
+
+physical Zone PlantBControl {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(system controller_B_C_1 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system controller_B_C_2 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system supervision_B_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(maintenance_server_B_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_B_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_B_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+
+physical Conduit PlantBControlConduit{
+	connects (PlantB, PlantBControl, PlantBConduit);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(firewall_B_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PBC_C1 ; connects {
+    		firewall_B,
+    		firewall_B_C,
+    		controller_B_C_1,
+    		controller_B_C_2,
+    		supervision_B_C,
+    		maintenance_server_B_C, 
+    		app_server_B_C,
+    		data_server_B_C
+    		
+    	})
+    }
+}
+
+
+physical Zone PlantC {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(laptop_computer_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(workstation_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(router_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(file_print_server_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+physical Conduit PlantCConduit{
+	connects (PlantC);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components{
+	  	(firewall_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PC_C1 ; connects {
+    		data_server_C,
+    		app_server_C,
+    		file_print_server_C,
+    		workstation_C,
+    		laptop_computer_C,
+    		router_C,
+    		firewall_C
+    	})
+    }
+}
+
+physical Zone PlantCControl {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(system controller_C_C_1 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system controller_C_C_2 ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(system supervision_C_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(maintenance_server_C_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(app_server_C_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]),
+	  	(data_server_C_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    }
+}
+
+
+physical Conduit PlantCControlConduit{
+	connects (PlantC, PlantCControl, PlantCConduit);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+    components {
+	  	(firewall_C_C ; capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1])
+    };
+    channels {
+    	(PCC_C1 ; connects {
+    		firewall_C,
+    		firewall_C_C,
+    		controller_C_C_1,
+    		controller_C_C_2,
+    		supervision_C_C,
+    		maintenance_server_C_C, 
+    		app_server_C_C,
+    		data_server_C_C
+    		
+    	})
+    }
+}
+

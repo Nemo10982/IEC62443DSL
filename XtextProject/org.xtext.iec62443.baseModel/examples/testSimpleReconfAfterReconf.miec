@@ -1,0 +1,83 @@
+trusted Zone A {
+	target [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+	components {
+		(
+			PLCA1 ;
+			capability [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			properties {
+				model = "m241" ,
+				isA = true ,
+				canExecute = true ,
+				capacity = 100 ,
+				attacked = true
+			}
+		) ,
+		(
+			PLCA2 ;
+			capability [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			properties {
+				model = "m242" ,
+				canExecute = true
+			}
+		) ,
+		(
+			application MPOProgram ;
+			executed on nothing ;
+			capability [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			constraints {
+				optional needs isA ,
+				model = "m241" ,
+				canExecute = true
+			} ;
+			communicates with {
+				PLCA2
+			} ;
+			properties {
+				score = 6 ,
+				score_d = 4 ,
+				size = 33 ,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]" ,
+				state = 2
+			}
+		) ,
+		(
+			application MPOProgram2 ;
+			executed on PLCA2 ;
+			capability [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			constraints {
+				model = "m242" ,
+				canExecute = true
+			} ;
+			communicates with {
+				PLCA2
+			} ;
+			properties {
+				score = 6 ,
+				score_d = 4 ,
+				size = 33 ,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]" ,
+				state = 0
+			}
+		)
+	}
+} trusted Zone C {
+	target [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+	components {
+		(
+			PLCC1 ;
+			capability [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			properties {
+				model = "m242" ,
+				isA = true ,
+				canExecute = true ,
+				capacity = 100
+			}
+		)
+	}
+} trusted Conduit AtoC {
+	connects (
+		A ,
+		C
+	) ;
+	target [ SL1 , SL1 , SL1 , SL1 , SL1 , SL1 , SL1 ]
+}

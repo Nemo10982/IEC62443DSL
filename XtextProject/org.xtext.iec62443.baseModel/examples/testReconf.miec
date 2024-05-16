@@ -1,0 +1,297 @@
+// A mpo
+// B hbw
+// C gripper
+// D sorter
+
+trusted Zone A {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isA = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			PLCA2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				canExecute=false
+			}
+		),
+		
+		(
+			RTUA;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP" 
+			}
+		),
+		
+		(
+			application MPOProgram;
+			executed on PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]; 
+			constraints{ 
+				optional needs isA,
+				model="m241",
+				canExecute=true
+			};  
+			communicates with {
+				PLCA2,
+				RTUA, 
+				GripperProgram  
+			};
+			properties{
+				score = 6,
+				score_d=4,
+				size = 33,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+trusted Zone B {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCB1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isB = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			PLCB2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				canExecute=false
+			}
+		),
+		
+		(
+			RTUB;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP"
+			}
+		),
+		
+		(
+			application HBWProgram;
+			executed on PLCB1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			constraints{
+				optional needs isB,
+				model="m241",
+				canExecute=true
+			}; 
+			communicates with {
+				PLCB2,
+				RTUB,
+				GripperProgram
+			};
+			properties{
+				score = 8,
+				score_d=2,
+				size = 33,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+
+trusted Zone C {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCC1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isC = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			PLCC2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				canExecute=false
+			}
+		),
+		
+		(
+			RTUC;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="TM3BCEIP"
+			}
+		),
+		
+		(
+			application GripperProgram;
+			executed on PLCC1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			constraints{
+				optional needs isC,
+				model="m241",
+				canExecute=true
+			}; 
+			communicates with {
+				PLCC2,
+				RTUC,
+				HBWProgram,  
+				MPOProgram,  
+				PLCD2
+			};
+			properties{
+				score = 10,
+				score_d=5,
+				size = 33,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+
+trusted Zone D {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCD1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isD = true,
+				canExecute=true,
+				capacity= 100
+			}
+		),
+		
+		(
+			PLCD2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m340"
+			}
+		),
+		
+		(
+			application SorterProgram;
+			executed on PLCD1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			constraints{
+				optional needs isD,
+				model="m241",
+				canExecute=true
+			}; 
+			communicates with {
+				PLCD2,
+				MPOProgram
+			};
+			properties{
+				score = 5,
+				score_d=3,
+				size = 33,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+} 
+
+
+trusted Conduit AtoC {
+	connects (A,C);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	channels{
+		(
+			AtoCChannel;
+			connects {
+				PLCA1,
+				PLCA2,
+				RTUA,
+				PLCC1,
+				PLCC2,
+				RTUC
+			}
+		)
+	}
+}
+
+trusted Conduit AtoD {
+	connects (A,D);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	channels{
+		(
+			AtoDChannel;
+			connects {
+				PLCA1,
+				PLCA2,
+				RTUA,
+				PLCD1,
+				PLCD2
+			}
+		)
+	}
+}
+
+trusted Conduit BtoC {
+	connects (B,C);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	channels{
+		(
+			BtoCChannel;
+			connects {
+				PLCB1,
+				PLCB2,
+				RTUB,
+				PLCC1,
+				PLCC2,
+				RTUC
+			}
+		)
+	}
+}
+
+trusted Conduit CtoD {
+	connects (C,D);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	channels{
+		(
+			CtoDChannel;
+			connects {
+				PLCD1,
+				PLCD2,
+				PLCC1,
+				PLCC2,
+				RTUC
+			}
+		)
+	}
+}
+
+
+
+

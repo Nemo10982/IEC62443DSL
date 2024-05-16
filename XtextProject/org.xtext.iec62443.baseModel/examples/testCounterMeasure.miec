@@ -1,0 +1,91 @@
+Zone A {
+	target [ SL2 , SL2 , SL3 , SL1 , SL1 , SL1 , SL1 ] ;
+	components {
+		(
+			application appA ;
+			executed on devA ;
+			capability [ SL2 , SL2 , SL2 , SL1 , SL1 , SL1 , SL1 ] ;
+			scoreCalc (100);
+			constraints {
+				model = "m241"
+			} ;
+			communicates with { 
+				appB 
+			}
+		) ,
+		(
+			devA ;
+			capability [ SL2 , SL2 , SL1 , SL1 , SL1 , SL1 , SL1 ] ;
+			properties {
+				model = "m241"
+			}
+		)
+	} ; 
+	countermeasures {
+		( integrityCountermeasure ; capability [ SL0 , SL0 , SL3 , SL0 , SL0 , SL0 , SL0 ]; cost 1 )
+	}
+} Zone B {
+	target [ SL2 , SL2 , SL2 , SL2 , SL2 , SL2 , SL2 ] ;
+	components {
+		(
+			application appB ;
+			executed on devB ;
+			capability [ SL2 , SL2 , SL2 , SL2 , SL2 , SL2 , SL2 ]
+		) ,
+		(
+			devB ;
+			capability [ SL2 , SL2 , SL2 , SL2 , SL2 , SL2 , SL2 ];
+			properties {
+				model = "m241"
+			}
+		)
+	}
+	;
+	countermeasures {
+		(
+			inactive testCTM1;
+			capability [ SL0 , SL0 , SL0 , SL0 , SL0 , SL2 , SL2 ];
+			cost 6
+		),
+		(
+			inactive testCTM2;
+			capability [ SL0 , SL0 , SL0 , SL2 , SL2 , SL0 , SL0 ];
+			cost 6
+		),
+		(
+			inactive testCTM3;
+			capability [ SL2 , SL2 , SL2 , SL2 , SL2 , SL2 , SL2 ];
+			cost 10
+			
+		)
+	}
+} Conduit AToB {
+	connects (
+		A ,
+		B
+	) ;
+	target [ SL2 , SL2 , SL3 , SL2 , SL2 , SL2 , SL2 ]
+;
+	components {
+		(
+			firewall ;
+			capability [ SL2 , SL2 , SL3 , SL2 , SL2 , SL2 ,SL2 ]
+			
+		) 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

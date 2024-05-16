@@ -1,0 +1,98 @@
+
+
+trusted Zone A {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m241",
+				isA = true,
+				canExecute=true,
+				capacity= 100,
+				power = 10
+			}
+		),
+		
+		(
+			PLCA2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m242",
+				canExecute=true,
+				capacity= 100,
+				power = 5
+			}
+		),
+		
+		(
+			application MPOProgram;
+			executed on PLCA1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]; 
+			scoreCalc (
+				min (numerical ref "power",  3)
+			);
+			constraints{ 
+				optional needs isA,
+				canExecute=true
+			};
+			properties{
+				size = 60,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		),
+		
+		(
+			application MPOProgram2;
+			executed on PLCA2;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1]; 
+			scoreCalc (
+				min (numerical ref "power",  5)
+			);
+			constraints{
+				canExecute=true
+			};
+			properties{
+				size = 60,
+				needed_sl = "[SL1,SL1,SL1,SL1,SL1,SL1,SL1]"
+			}
+		)
+	}
+	
+}
+
+
+trusted Zone C {
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	components {
+		(
+			PLCC1;
+			capability [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+			properties{
+				model="m242",
+				isA = true,
+				canExecute=true,
+				capacity= 100,
+				power = 3
+			}
+		)
+	}
+	
+}
+
+
+trusted Conduit AtoC {
+	connects (A,C);
+	target [SL1,SL1,SL1,SL1,SL1,SL1,SL1];
+	channels{
+		(
+			AtoCChannel;
+			connects {
+				PLCA1,
+				PLCA2,
+				PLCC1
+			}
+		)
+	}
+}

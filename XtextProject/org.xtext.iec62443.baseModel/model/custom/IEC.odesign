@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="IEC" version="12.0.0.2017041100">
+  <ownedViewpoints name="IEC" modelFileExtension="miec">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="model" domainClass="mIEC::Model" enablePopupBars="true">
+      <metamodel href="http://www.xtext.org/example/mydsl/mIEC#/"/>
+      <metamodel href="MIEC.ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="Conduit" sourceMapping="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']" targetMapping="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']" targetFinderExpression="aql: if self.oclIsKindOf(mIEC::Conduit) then self.oclAsType(mIEC::Conduit).connects else null endif">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Zone" semanticCandidatesExpression="aql:if self.oclIsKindOf(mIEC::Model) then (self.zones + self.conduits) else (if self.oclIsKindOf(mIEC::ClassicalZone) then self.oclAsType(mIEC::ClassicalZone).subZones else null endif) endif" domainClass="Zone" reusedContainerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']" childrenPresentation="VerticalStack">
+          <subContainerMappings name="ZoneDescription" semanticCandidatesExpression="aql:self" domainClass="mIEC::Zone" childrenPresentation="HorizontalStack">
+            <subContainerMappings name="SLContainer" semanticCandidatesExpression="aql:self" domainClass="mIEC::Zone" childrenPresentation="List">
+              <subNodeMappings name="targetSL" semanticCandidatesExpression="feature:target" domainClass="mIEC::SecurityLevels">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'[' + self.accessControl + ',' + self.useControl + ',' + self.systemIntegrity + ',' + self.dataConfidentiality + ',' + self.restrictedDataFlow + ',' + self.timelyResponse + ',' + self.resourceAvailability + ']'" tooltipExpression="aql:self.toString()" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'Target:'" hideLabelByDefault="true">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="Component" semanticCandidatesExpression="aql: if self.oclIsKindOf(mIEC::Zone) then self.components else self.devices endif" domainClass="Component" childrenPresentation="VerticalStack">
+              <subContainerMappings name="SLContainerComp" semanticCandidatesExpression="aql:self" domainClass="mIEC::Component" childrenPresentation="List">
+                <subNodeMappings name="capabilitySLComp" semanticCandidatesExpression="feature:capability" domainClass="mIEC::SecurityLevels">
+                  <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'[' + self.accessControl + ',' + self.useControl + ',' + self.systemIntegrity + ',' + self.dataConfidentiality + ',' + self.restrictedDataFlow + ',' + self.timelyResponse + ',' + self.resourceAvailability + ']'" tooltipExpression="aql:self.toString()" labelPosition="node" resizeKind="NSEW">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                  </style>
+                </subNodeMappings>
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'Capability:'" hideLabelByDefault="true">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <subContainerMappings name="Properties" semanticCandidatesExpression="aql:self" domainClass="mIEC::Component" childrenPresentation="VerticalStack">
+                <subContainerMappings name="Property" semanticCandidatesExpression="feature:properties" domainClass="mIEC::Property" childrenPresentation="List">
+                  <subNodeMappings name="Value" semanticCandidatesExpression="feature:value" domainClass="mIEC::Value">
+                    <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'value: ' + self.value" labelPosition="node" resizeKind="NSEW">
+                      <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                    </style>
+                  </subNodeMappings>
+                  <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'name: ' +  self.name">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                    <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                  </style>
+                </subContainerMappings>
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'properties'">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <subContainerMappings name="ExecutedOn" semanticCandidatesExpression="aql:self" domainClass="mIEC::Application">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'executed on ' + self.executedOn.name">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                </style>
+              </subContainerMappings>
+              <subContainerMappings name="Constraints" semanticCandidatesExpression="aql:self" domainClass="mIEC::Application" childrenPresentation="VerticalStack">
+                <subContainerMappings name="Constraint" semanticCandidatesExpression="feature:constraints" domainClass="mIEC::Constraint" childrenPresentation="HorizontalStack">
+                  <subContainerMappings name="operation" semanticCandidatesExpression="aql:self" domainClass="mIEC::OperationConstraint">
+                    <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:self.operation">
+                      <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                      <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                    </style>
+                  </subContainerMappings>
+                  <subContainerMappings name="valueOrRef" semanticCandidatesExpression="aql:self.value" domainClass="mIEC::ValueOrReference" childrenPresentation="List">
+                    <subNodeMappings name="isValue" semanticCandidatesExpression="aql:self" domainClass="mIEC::Value">
+                      <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'value: ' + self.value" labelPosition="node" resizeKind="NSEW">
+                        <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                        <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                        <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                      </style>
+                    </subNodeMappings>
+                    <subNodeMappings name="isRef" semanticCandidatesExpression="aql:self" domainClass="mIEC::Reference">
+                      <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'ref: ' + self.reference" labelPosition="node" resizeKind="NSEW">
+                        <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                        <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                        <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                      </style>
+                    </subNodeMappings>
+                  </subContainerMappings>
+                  <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'property name: ' +  self.propertyName">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                    <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                  </style>
+                  <conditionnalStyles predicateExpression="aql:self.optional">
+                    <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'property name: ' +  self.propertyName">
+                      <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                      <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+                      <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+                    </style>
+                  </conditionnalStyles>
+                </subContainerMappings>
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'constraints'">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <subContainerMappings name="SystemComposition" semanticCandidatesExpression="aql:self" domainClass="mIEC::System" reusedContainerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']" childrenPresentation="VerticalStack">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'Contains:'">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                </style>
+              </subContainerMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.oclIsKindOf(mIEC::Device) then 'device ' else (if self.oclIsKindOf(mIEC::Application) then 'application ' else 'system ' endif) endif +   self.name">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </subContainerMappings>
+            <subContainerMappings name="Countermeasure" semanticCandidatesExpression="feature:countermeasures" domainClass="mIEC::CounterMeasure" childrenPresentation="VerticalStack">
+              <subContainerMappings name="SLContainerCount" semanticCandidatesExpression="aql:self" domainClass="mIEC::CounterMeasure" childrenPresentation="List">
+                <subNodeMappings name="capabilitySLCount" semanticCandidatesExpression="feature:capability" domainClass="mIEC::SecurityLevels">
+                  <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'[' + self.accessControl + ',' + self.useControl + ',' + self.systemIntegrity + ',' + self.dataConfidentiality + ',' + self.restrictedDataFlow + ',' + self.timelyResponse + ',' + self.resourceAvailability + ']'" tooltipExpression="aql:self.toString()" labelPosition="node" resizeKind="NSEW">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                  </style>
+                </subNodeMappings>
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'Capability:'" hideLabelByDefault="true">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subContainerMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:'Description:'">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql:(if (self.oclIsKindOf(mIEC::Conduit)) then 'conduit ' else 'zone ' endif ) + self.name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createZoneInModel" precondition="aql:container.oclIsKindOf(mIEC::Model)" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::ClassicalZone" referenceName="zones">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="target"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="achieved"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noname'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createConduitInModel" precondition="aql:container.oclIsKindOf(mIEC::Model)" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Conduit" referenceName="conduits">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="target"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="achieved"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noname'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createConduitInZone" precondition="aql:container.oclIsKindOf(mIEC::ClassicalZone)" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Conduit" referenceName="subZones">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="target"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="achieved"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noname'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createZoneInZone" precondition="aql:container.oclIsKindOf(mIEC::ClassicalZone)" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::ClassicalZone" referenceName="subZones">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="target"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="achieved"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noname'"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addApplication" precondition="aql:container.oclIsKindOf(mIEC::Zone)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Application" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noName'"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="capability"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addDeviceToZone" precondition="aql:container.oclIsKindOf(mIEC::Zone)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Device" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noName'"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="capability"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addSystem" precondition="aql:container.oclIsKindOf(mIEC::Zone)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::System" referenceName="components">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noName'"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="capability"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addDeviceToSystem" precondition="aql:container.oclIsKindOf(mIEC::Component)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Device" referenceName="devices">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noName'"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::SecurityLevels" referenceName="capability"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addProperty" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Properties']/@subContainerMappings[name='Property']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::Property" referenceName="properties">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'noName'"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::StringValue" referenceName="value">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:''"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newBoolValue" nodeMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Properties']/@subContainerMappings[name='Property']/@subNodeMappings[name='Value']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::BooleanValue" referenceName="value">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:true"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newIntValue" nodeMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Properties']/@subContainerMappings[name='Property']/@subNodeMappings[name='Value']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::IntegerValue" referenceName="value">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:0"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newFloatValue" nodeMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Properties']/@subContainerMappings[name='Property']/@subNodeMappings[name='Value']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::FloatValue" referenceName="value"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newStringValue" nodeMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Properties']/@subContainerMappings[name='Property']/@subNodeMappings[name='Value']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::StringValue" referenceName="value">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:''"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addPresenceConstraint" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::PresenceConstraint" referenceName="constraints">
+                  <subModelOperations xsi:type="tool_1:SetValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="addValueConstraint" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::OperationConstraint" referenceName="constraints">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::StringValue" referenceName="value">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:''"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newBoolValueCs" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']/@subContainerMappings[name='valueOrRef']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::BooleanValue" referenceName="value">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:true"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newIntValueCs" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']/@subContainerMappings[name='valueOrRef']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::IntegerValue" referenceName="value"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newFloatValueCs" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']/@subContainerMappings[name='valueOrRef']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::FloatValue" referenceName="value"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newStringValueCs" containerMappings="//@ownedViewpoints[name='IEC']/@ownedRepresentations[name='model']/@defaultLayer/@containerMappings[name='Zone']/@subContainerMappings[name='ZoneDescription']/@subContainerMappings[name='Component']/@subContainerMappings[name='Constraints']/@subContainerMappings[name='Constraint']/@subContainerMappings[name='valueOrRef']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.value">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mIEC::StringValue" referenceName="value">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:''"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

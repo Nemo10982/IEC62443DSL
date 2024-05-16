@@ -1,0 +1,324 @@
+***** Zone A *****
+Zone-wise requirements:Recommendations regarding Identification and authentication control:
+	- Human user identification and authentication
+	- Account management
+	- Identifier management
+	- Authenticator management
+	- Wireless access management
+	- Strength of password-based authentication
+	- Authenticator feedback
+	- Unsuccessful login attempts
+	- System use notification
+	- Access via untrusted networks
+
+Recommendations regarding Use control:
+	- Authorization enforcement
+	- Wireless use control
+	- Use control for portable and mobile devices
+	- Mobile code
+	- Session lock
+	- Auditable events
+	- Audit storage capacity
+	- Response to audit processing failures
+
+Recommendations regarding System integrity:
+	- Communication integrity
+	- Malicious code protection
+	- Security functionality verification
+	- Input validation
+	- Deterministic output
+
+Recommendations regarding Data confidentiality:
+	- Information confidentiality
+	- Use of cryptography
+
+Recommendations regarding Restricted data flow:
+	- Network segmentation
+	- Zone boundary protection
+	- General purpose person-to-person communication restrictions
+	- Application partitioning
+
+Recommendations regarding Timely response to events:
+	- Audit log accessibility
+
+Recommendations regarding Resource availability:
+	- Denial of service protection
+	- Resource management
+	- Control system backup
+	- Control system recovery and reconstitution
+	- Emergency power
+	- Network and security configuration settings
+	- Least functionality
+
+
+Component-wise requirements:
+	** Component PLCA1 **
+Recommendations regarding Identification and authentication control:
+
+Recommendations regarding Use control:
+
+Recommendations regarding System integrity:
+
+Recommendations regarding Data confidentiality:
+
+Recommendations regarding Restricted data flow:
+
+Recommendations regarding Timely response to events:
+
+Recommendations regarding Resource availability:
+
+
+	** Component PLCA2 **
+Recommendations regarding Identification and authentication control:
+
+Recommendations regarding Use control:
+
+Recommendations regarding System integrity:
+
+Recommendations regarding Data confidentiality:
+
+Recommendations regarding Restricted data flow:
+
+Recommendations regarding Timely response to events:
+
+Recommendations regarding Resource availability:
+
+
+	** Component MPOProgram **
+Recommendations regarding Identification and authentication control:
+		- Human user identification and authentication
+		- Account management
+		- Identifier management
+		- Authenticator management
+		- Wireless access management
+		- Strength of password-based authentication
+		- Authenticator feedback
+		- Unsuccessful login attempts
+		- System use notification
+		- Access via untrusted networks
+
+Recommendations regarding Use control:
+		- Authorization enforcement
+		- Wireless use control
+		- Mobile code
+		- Session lock
+		- Auditable events
+		- Audit storage capacity
+		- Response to audit processing failures
+		- Timestamps
+		- Non-repudiation
+
+Recommendations regarding System integrity:
+		- Communication integrity
+		- Malicious code protection
+		- Security functionality verification
+		- Software and information integrity
+		- Input validation
+		- Deterministic output
+		- Error handling
+		- Support for updates
+		- Integrity of the boot process
+
+Recommendations regarding Data confidentiality:
+		- Information confidentiality
+		- Use of cryptography
+
+Recommendations regarding Restricted data flow:
+		- Network segmentation
+		- Zone boundary protection
+		- General purpose person-to-person communication restrictions
+
+Recommendations regarding Timely response to events:
+		- Audit log accessibility
+			Programmatic access to audit logs
+		- Continuous monitoring
+
+Recommendations regarding Resource availability:
+		- Denial of service protection
+		- Resource management
+		- Control system backup
+		- Control system recovery and reconstitution
+		- Network and security configuration settings
+		- Least functionality
+		- Control system component inventory
+
+
+	** Component MPOProgram2 **
+Recommendations regarding Identification and authentication control:
+		- Human user identification and authentication
+		- Account management
+		- Identifier management
+		- Authenticator management
+		- Wireless access management
+		- Strength of password-based authentication
+		- Authenticator feedback
+		- Unsuccessful login attempts
+		- System use notification
+		- Access via untrusted networks
+
+Recommendations regarding Use control:
+		- Authorization enforcement
+		- Wireless use control
+		- Mobile code
+		- Session lock
+		- Auditable events
+		- Audit storage capacity
+		- Response to audit processing failures
+		- Timestamps
+		- Non-repudiation
+
+Recommendations regarding System integrity:
+		- Communication integrity
+		- Malicious code protection
+		- Security functionality verification
+		- Software and information integrity
+		- Input validation
+		- Deterministic output
+		- Error handling
+		- Support for updates
+		- Integrity of the boot process
+
+Recommendations regarding Data confidentiality:
+		- Information confidentiality
+		- Use of cryptography
+
+Recommendations regarding Restricted data flow:
+		- Network segmentation
+		- Zone boundary protection
+		- General purpose person-to-person communication restrictions
+
+Recommendations regarding Timely response to events:
+		- Audit log accessibility
+			Programmatic access to audit logs
+		- Continuous monitoring
+
+Recommendations regarding Resource availability:
+		- Denial of service protection
+		- Resource management
+		- Control system backup
+		- Control system recovery and reconstitution
+		- Network and security configuration settings
+		- Least functionality
+		- Control system component inventory
+
+***** Zone C *****
+Zone-wise requirements:Recommendations regarding Identification and authentication control:
+	- Human user identification and authentication
+	- Account management
+	- Identifier management
+	- Authenticator management
+	- Wireless access management
+	- Strength of password-based authentication
+	- Authenticator feedback
+	- Unsuccessful login attempts
+	- System use notification
+	- Access via untrusted networks
+
+Recommendations regarding Use control:
+	- Authorization enforcement
+	- Wireless use control
+	- Use control for portable and mobile devices
+	- Mobile code
+	- Session lock
+	- Auditable events
+	- Audit storage capacity
+	- Response to audit processing failures
+
+Recommendations regarding System integrity:
+	- Communication integrity
+	- Malicious code protection
+	- Security functionality verification
+	- Input validation
+	- Deterministic output
+
+Recommendations regarding Data confidentiality:
+	- Information confidentiality
+	- Use of cryptography
+
+Recommendations regarding Restricted data flow:
+	- Network segmentation
+	- Zone boundary protection
+	- General purpose person-to-person communication restrictions
+	- Application partitioning
+
+Recommendations regarding Timely response to events:
+	- Audit log accessibility
+
+Recommendations regarding Resource availability:
+	- Denial of service protection
+	- Resource management
+	- Control system backup
+	- Control system recovery and reconstitution
+	- Emergency power
+	- Network and security configuration settings
+	- Least functionality
+
+
+Component-wise requirements:
+	** Component PLCC1 **
+Recommendations regarding Identification and authentication control:
+
+Recommendations regarding Use control:
+
+Recommendations regarding System integrity:
+
+Recommendations regarding Data confidentiality:
+
+Recommendations regarding Restricted data flow:
+
+Recommendations regarding Timely response to events:
+
+Recommendations regarding Resource availability:
+
+***** Conduit AtoC *****
+Conduit-wise requirements:Recommendations regarding Identification and authentication control:
+	- Human user identification and authentication
+	- Account management
+	- Identifier management
+	- Authenticator management
+	- Wireless access management
+	- Strength of password-based authentication
+	- Authenticator feedback
+	- Unsuccessful login attempts
+	- System use notification
+	- Access via untrusted networks
+
+Recommendations regarding Use control:
+	- Authorization enforcement
+	- Wireless use control
+	- Use control for portable and mobile devices
+	- Mobile code
+	- Session lock
+	- Auditable events
+	- Audit storage capacity
+	- Response to audit processing failures
+
+Recommendations regarding System integrity:
+	- Communication integrity
+	- Malicious code protection
+	- Security functionality verification
+	- Input validation
+	- Deterministic output
+
+Recommendations regarding Data confidentiality:
+	- Information confidentiality
+	- Use of cryptography
+
+Recommendations regarding Restricted data flow:
+	- Network segmentation
+	- Zone boundary protection
+	- General purpose person-to-person communication restrictions
+	- Application partitioning
+
+Recommendations regarding Timely response to events:
+	- Audit log accessibility
+
+Recommendations regarding Resource availability:
+	- Denial of service protection
+	- Resource management
+	- Control system backup
+	- Control system recovery and reconstitution
+	- Emergency power
+	- Network and security configuration settings
+	- Least functionality
+

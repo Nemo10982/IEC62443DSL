@@ -1,0 +1,55 @@
+
+
+
+
+Zone Plant_MPO {capability [SL4, SL4, SL4, SL3, SL4, SL3, SL3]; achieved [SL2, SL4, SL1, SL3, SL0, SL0, SL2]; capacity 3}
+	(
+		{ RTU_MPO, needs [SL0, SL0, SL1, SL0, SL0, SL0, SL0]}, 
+		{ PLC_MPO, needs [SL1, SL3, SL1, SL0, SL0, SL0, SL1], communicates with [RTU_MPO, PLC_GRIPPER, PLC_SORTER]}
+	)
+ 
+Zone Plant_HBW {capability [SL4, SL4, SL4, SL0, SL4, SL3, SL3]; achieved [SL2, SL0, SL1, SL0, SL4, SL0, SL2]; capacity 6}
+	(
+		{ RTU_HBW_PWM, needs [SL2, SL0, SL1, SL0, SL0, SL0, SL1]}, 
+		{ RTU_HBW, needs [SL0, SL0, SL0, SL0, SL3, SL0, SL0]}, 
+		{ PLC_HBW, needs [SL0, SL0, SL0, SL0, SL2, SL0, SL1], communicates with [RTU_HBW_PWM, RTU_HBW, PLC_GRIPPER]} 
+	) 
+	
+Zone Plant_GRIPPER {capability [SL4, SL2, SL3, SL4, SL1, SL1, SL4]; achieved [SL4, SL1, SL1, SL4, SL1, SL1, SL0]; capacity 5}
+	( 
+		{ RTU_GRIPPER, needs [SL1, SL1, SL1, SL4, SL0, SL1, SL0]},   
+		{ RTU_GRIPPER_PWM, needs [SL0, SL1, SL0, SL3, SL0, SL0, SL0]},  
+		{ PLC_GRIPPER, needs [SL4, SL0, SL1, SL1, SL1, SL0, SL0], communicates with [RTU_GRIPPER, RTU_GRIPPER_PWM, RTU_SORTER_M340]}
+	)
+	  
+Zone Plant_SORTER {capability[SL3, SL4, SL4, SL4, SL3, SL1, SL4]; achieved  [SL1, SL4, SL4, SL2, SL3, SL1, SL3]; capacity 4}
+	(
+		{ RTU_SORTER_M340, needs [SL0, SL3, SL4, SL0, SL3, SL0, SL2]},   
+		{ PLC_SORTER, needs [SL1, SL1, SL2, SL2, SL1, SL1, SL0], communicates with [RTU_SORTER_M340]}
+	) 
+	
+Zone Supervision {capability [SL1, SL2, SL0, SL3, SL4, SL3, SL3]; achieved [SL1, SL2, SL0, SL3, SL2, SL2, SL2]}
+ 
+
+ 
+	(
+		{ HMI, needs [SL0, SL2, SL0, SL3, SL2, SL2, SL0], communicates with [RTU_SORTER_M340]},
+		{ COMPUTER, needs [SL1, SL1, SL0, SL1, SL1, SL0, SL1], communicates with [PLC_MPO,PLC_HBW,PLC_GRIPPER,PLC_SORTER]}
+	)
+	
+	
+Conduit supToMpo {Supervision; Plant_MPO; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit supToHbw {Supervision; Plant_HBW; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit supToGripper {Supervision; Plant_GRIPPER; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit supToSorter {Supervision; Plant_SORTER; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+
+Conduit MpoToGripper {Plant_MPO; Plant_GRIPPER; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit MpoToSorter {Plant_MPO; Plant_SORTER;  capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit HbwToGripper {Plant_HBW; Plant_GRIPPER;  capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+Conduit GripperToSorter {Plant_GRIPPER; Plant_SORTER; capability [SL4, SL4, SL4, SL4, SL4, SL4, SL4]; achieved [SL4, SL4, SL4, SL4, SL4, SL4, SL4]  }
+
+
+
+Implementation imp_RTU_MPO_SL1 run RTU_MPO capability [SL0,SL0,SL1,SL0,SL0,SL0,SL0] cost 100
+
+  
